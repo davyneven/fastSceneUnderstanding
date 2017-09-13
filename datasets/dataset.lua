@@ -20,16 +20,14 @@ end
 
 local function getDatasetIterator(opts, mode)
     local it, weights
-    local batchSize = mode == 'train' and opts.train_bs or opts.valtest_bs
+    local batchSize = opts.bs or 1
     local transf = getTransformations(opts, mode)
 
     if (opts.dataset == 'cityscapes') then
         print('creating cityscapes dataset')
         local parenth_path = paths.concat(opts.data_root, 'cityscapes')
 
-        if (mode == 'test') then
-            it = tnt.Cityscapes(parenth_path, mode):transform(transf):batch(batchSize, 'skip-last'):iterator()
-        elseif (mode == 'trainval') then
+        if (mode == 'trainval') then
             local train_d = tnt.Cityscapes(parenth_path, 'train')
             local val_d = tnt.Cityscapes(parenth_path, 'val')
             local train_val = tnt.ConcatDataset({datasets = {train_d, val_d}})

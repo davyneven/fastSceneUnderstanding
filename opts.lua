@@ -11,7 +11,7 @@ function M.parse(arg)
     ------------ Data options --------------------
 
     cmd:option('-dataset', 'cityscapes', 'Options: cityscapes')
-    cmd:option('-data_root', '/esat/toyota/datasets')
+    cmd:option('-data_root', '/path/to/cityscapes')
     cmd:option('-train_mode', 'train', 'mode: train, trainval')
     cmd:option('-val', 'true', 'Do validation during training')
 
@@ -37,8 +37,7 @@ function M.parse(arg)
     ------------- Training options --------------------
 
     cmd:option('-nEpochs', 100, 'Number of total epochs to run')
-    cmd:option('-train_bs', 2, 'train batchsize')
-    cmd:option('-valtest_bs', 2, 'val/test batchsize')
+    cmd:option('-bs', 2, 'batchsize')
     cmd:option('-iterSize', 5, '#iterations before doing param update, so virtual bs = bs * itersize')
     cmd:option('-resume', 'false', 'Resume from the latest checkpoint')
 
@@ -69,14 +68,14 @@ function M.parse(arg)
     opts.classWeighting = opts.classWeighting ~= 'false'
     opts.freezeBN = opts.freezeBN ~= 'false'
 
-    opts.directory = opts.directory .. opts.name .. '/'
+    opts.directory = paths.concat(opts.directory, opts.name)
 
     if (opts.save) then
         if not paths.dirp(opts.directory) and not paths.mkdir(opts.directory) then
-            cmd:error('error: unable to create save directory: ' .. opts.save .. '\n')
+            cmd:error('error: unable to create save directory: ' .. opts.directory .. '\n')
         end
         -- start logging
-        cmd:log(opts.directory .. 'log.txt', opts)
+        cmd:log(paths.concat(opts.directory, 'log.txt'), opts)
     end
 
     return opts

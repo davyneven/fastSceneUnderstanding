@@ -57,8 +57,9 @@ function Cityscapes.get(self, idx)
     -- Loading image
     local imgFile = self.csv_images[idx][1]
     local im = image.load(paths.concat(self.parent_path, imgFile), 3, 'float')
+    local name = pl.utils.split(paths.basename(self.csv_images[idx][1], '.png'), '_leftImg8bit')[1]
 
-    if (mode ~= 'test') then
+    if (self.mode ~= 'test') then
         -- Loading segmentation map
         local labelFile = self.csv_labels[idx][1]
         local label = image.load(paths.concat(self.parent_path, labelFile), 1, 'byte')
@@ -81,9 +82,9 @@ function Cityscapes.get(self, idx)
         instances[label:ne(15)] = 0
         instances = instances:byte()
 
-        return {image = im, label = label, depth = depth, instances = instances}
+        return {image = im, label = label, depth = depth, instances = instances, name = name}
     else
-        return {image = im}
+        return {image = im, name = name}
     end
 end
 

@@ -15,6 +15,7 @@ local function to_color(input, dim, map)
     require 'imgraph'
     local ncolors = dim or input:max() + 1
     local colormap = map or image.colormap(ncolors)
+    colormap[1] = torch.DoubleTensor(3):zero()
     input = imgraph.colorize(input:squeeze():float(), colormap:float())
     return input
 end
