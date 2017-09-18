@@ -41,9 +41,9 @@ for item in dataset_it() do
     labels_segm = labels_segm:byte()
 
     -- Depth: set ignore values to zero for better visualization
-    if (opts.mode ~= 'test') then
-        out_depth[gt_labels_depth:eq(0)] = 0
-    end
+    --if (opts.mode ~= 'test') then
+    --    out_depth[gt_labels_depth:eq(0)] = 0
+    --end
 
     -- Cluster instances
     local labels_inst = cluster.cluster(out_instances, labels_segm:eq(15), 1.5)

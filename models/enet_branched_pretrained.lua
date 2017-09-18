@@ -42,7 +42,7 @@ local function bottleneck(input, output, upsample, reverse_module)
 end
 
 local function createModel(nClasses)
-    local pretrained_model = torch.load('models/model-best.net')
+    local pretrained_model = torch.load('models/cityscapesSegmentation.t7')
     local model = nn.Sequential()
 
     -- add shared encoder part

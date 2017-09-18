@@ -11,8 +11,8 @@ function M.parse(arg)
     ------------ Data options --------------------
 
     cmd:option('-dataset', 'cityscapes', 'Options: cityscapes')
-    cmd:option('-data_root', '/path/to/cityscapes/')
-    cmd:option('-mode', 'test', 'mode: train, trainval, val, test')
+    cmd:option('-data_root', '/path/to/cityscapes')
+    cmd:option('-mode', 'val', 'mode: train, trainval, val, test')
 
     ------------- Data transformation -------------
 
@@ -21,7 +21,7 @@ function M.parse(arg)
 
     ------------- Model -----------------------
 
-    cmd:option('-model', '/path/to/model/model.t7', 'path to model')
+    cmd:option('-model', 'models/fastSceneSegmentationFinal.t7', 'path to model')
 
     ------------- SAVE AND DISPLAY ------------
 

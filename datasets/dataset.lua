@@ -25,7 +25,7 @@ local function getDatasetIterator(opts, mode)
 
     if (opts.dataset == 'cityscapes') then
         print('creating cityscapes dataset')
-        local parenth_path = paths.concat(opts.data_root, 'cityscapes')
+        local parenth_path = opts.data_root
 
         if (mode == 'trainval') then
             local train_d = tnt.Cityscapes(parenth_path, 'train')

@@ -17,7 +17,7 @@ function M.parse(arg)
 
     ------------- Data transformation -------------
 
-    cmd:option('-size', 1024, 'rescale longer side to size')
+    cmd:option('-size', 512, 'rescale longer side to size')
 
     ------------- Model options -----------------------
 
