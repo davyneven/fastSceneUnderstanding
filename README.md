@@ -6,7 +6,7 @@ Example:
 
 <img src="imgs/img.png" width="900px" />
 
-If you use this code for your research, please cite our paper: 
+If you use this code for your research, please cite our papers: 
 
 [Fast Scene Understanding for Autonomous Driving](https://arxiv.org/abs/1708.02550)  
 [Davy Neven](https://www.kuleuven.be/wieiswie/nl/person/00104627), [Bert De Brabandere](https://www.kuleuven.be/wieiswie/nl/person/00096935), [Stamatios Georgoulis](http://homes.esat.kuleuven.be/~sgeorgou/), [Marc Proesmans](https://www.kuleuven.be/wieiswie/nl/person/00003449) and [Luc Van Gool](https://www.vision.ee.ethz.ch/en/members/get_member.cgi?id=1)  
@@ -15,10 +15,8 @@ Published at "Deep Learning for Vehicle Perception", workshop at the IEEE Sympos
 and
 
 [Semantic Instance Segmentation with a Discriminative Loss Function](https://arxiv.org/abs/1708.02551)  
-[Bert De Brabandere](https://www.kuleuven.be/wieiswie/nl/person/00096935),[Davy Neven](https://www.kuleuven.be/wieiswie/nl/person/00104627) and [Luc Van Gool](https://www.vision.ee.ethz.ch/en/members/get_member.cgi?id=1)  
+[Bert De Brabandere](https://www.kuleuven.be/wieiswie/nl/person/00096935), [Davy Neven](https://www.kuleuven.be/wieiswie/nl/person/00104627) and [Luc Van Gool](https://www.vision.ee.ethz.ch/en/members/get_member.cgi?id=1)  
 Published at "Deep Learning for Robotic Vision", workshop at CVPR 2017
-
-
 
 # Setup
 
@@ -73,13 +71,3 @@ To train your own model, run:
 ```qlua main.lua -data_root CITYSCAPES_ROOT -save true -directory PATH_TO_SAVE```
 
 For other options, see *opts.lua*
-
-
-
-
-
-
-
-
-
-
