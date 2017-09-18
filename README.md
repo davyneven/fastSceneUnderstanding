@@ -1,8 +1,8 @@
 # Fast Scene Understanding
 
-Torch implementation for simultaneous image segmentation, instance segmentation and single image depth.
+Torch implementation for simultaneous image segmentation, instance segmentation and single image depth. Two videos can be found [here](https://www.youtube.com/watch?v=55ElRh-g_7o) and [here](https://www.youtube.com/watch?v=FB_SZIKyX50).
 
-Example: 
+Example:
 
 <img src="imgs/img.png" width="900px" />
 
