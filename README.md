@@ -71,3 +71,6 @@ To train your own model, run:
 ```qlua main.lua -data_root CITYSCAPES_ROOT -save true -directory PATH_TO_SAVE```
 
 For other options, see *opts.lua*
+
+# Tensorflow code
+A third party tensorflow implementation of our loss function applied to lane instance segmentation is available from [Hanqiu Jiang's github repository](https://github.com/hq-jiang/instance-segmentation-with-discriminative-loss-tensorflow).
